@@ -1,0 +1,6 @@
+.center-screen-container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  row-gap: 3px;
+}

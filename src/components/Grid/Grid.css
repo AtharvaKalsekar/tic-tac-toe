@@ -1,0 +1,13 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: 100px 100px 100px;
+  column-gap: 0px;
+  justify-content: center;
+}
+
+.grid-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
