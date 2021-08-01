@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { gameChangeTurn } from "../../actions/actions";
-import { AppState } from "../../common/Interfaces";
+import { AppState, CellProps } from "../../common/Interfaces";
 import "./Cell.css";
 
-const Cell = () => {
+const Cell = (props: CellProps) => {
   const dispatch = useDispatch();
 
   const game = useSelector((state: AppState) => state.game);
@@ -14,11 +14,13 @@ const Cell = () => {
 
   useEffect(() => {
     if (!gameStarted) {
+      props.updateGridStatus(props.num, "");
       setClicked("");
     }
-  }, [gameStarted]);
+  }, [props, gameStarted]);
 
   const onClickCell = () => {
+    props.updateGridStatus(props.num, currentTurn);
     dispatch(gameChangeTurn());
     setClicked(currentTurn);
   };

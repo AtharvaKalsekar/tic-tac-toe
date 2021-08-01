@@ -10,4 +10,5 @@ export interface AppState {
 
 export interface CellProps {
   num: number;
+  updateGridStatus: (num: number, value: string) => void;
 }
