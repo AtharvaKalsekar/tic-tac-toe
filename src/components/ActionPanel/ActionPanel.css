@@ -1,0 +1,45 @@
+.action-panel-container {
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 2px;
+}
+
+.action-button {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  justify-items: center;
+  height: 50px;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white;
+}
+
+.action-button-start {
+  background-color: rgb(177, 205, 122);
+}
+
+.action-button-start:hover {
+  background-color: rgb(177, 205, 122);
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+.action-button-reset {
+  background-color: rgb(170, 34, 45);
+}
+
+.action-button-reset:hover {
+  background-color: rgb(170, 34, 45);
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+.icon {
+  margin-inline: 3px;
+  padding: 2px;
+  color: white;
+}

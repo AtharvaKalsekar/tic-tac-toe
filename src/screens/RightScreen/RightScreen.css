@@ -4,4 +4,25 @@
   border: 2px solid black;
   padding: 3px;
   margin: 3px;
+  overflow: hidden;
+}
+
+.record {
+  background-color: white;
+  padding: 3px;
+  margin-inline: 2px;
+  margin-top: 3px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.entry {
+  margin: 1px;
+  padding: 2px;
+}
+
+.record-container {
+  display: block;
+  max-height: 500px;
+  overflow-y: scroll;
 }

@@ -10,6 +10,12 @@ export const gameReset = () => (dispatch: any, getState: any) => {
 };
 
 export const gameChangeTurn = () => (dispatch: any, getState: any) => {
+  const {
+    game: { gameStarted },
+  } = getState();
+  if (!gameStarted) {
+    return;
+  }
   dispatch({
     type: Game.CHANGE_TURN,
   });
@@ -18,13 +24,18 @@ export const gameChangeTurn = () => (dispatch: any, getState: any) => {
 export const gameEnd =
   (result: string, player: string) => (dispatch: any, getState: any) => {
     const {
-      game: { gameNumber },
+      game: { gameNumber, gameStarted },
     }: AppState = getState();
     let res: GameResult = {
       matchNumber: gameNumber,
       player,
       status: result,
     };
+
+    if (!gameStarted) {
+      return;
+    }
+
     dispatch({
       type: result,
       payload: {

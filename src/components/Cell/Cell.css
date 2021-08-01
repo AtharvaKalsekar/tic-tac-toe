@@ -4,17 +4,28 @@
   display: block;
 }
 
-.p1-select {
-  background-color: green;
-}
-
-.p2-select {
-  background-color: red;
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: white;
 }
 
 .selectable {
 }
 
 .selectable:hover {
-  border: 2px solid blue;
+  border: 5px solid blue;
+  cursor: pointer;
+}
+
+.icon-circle {
+  width: 50px !important;
+  height: 50px;
+  color: green;
+}
+
+.icon-cross {
+  width: 50px !important;
+  height: 50px;
+  color: red;
 }

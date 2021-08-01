@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { gameChangeTurn } from "../../actions/actions";
 import { AppState, CellProps } from "../../common/Interfaces";
 import "./Cell.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleNotch, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Cell = (props: CellProps) => {
   const dispatch = useDispatch();
@@ -34,7 +36,7 @@ const Cell = (props: CellProps) => {
   };
 
   const getButtonStyle = () => {
-    let classes = "";
+    let classes = "cell ";
 
     if (isSelected()) {
       classes += `${clicked}-select` + " ";
@@ -45,6 +47,18 @@ const Cell = (props: CellProps) => {
     return classes;
   };
 
+  const getMark = () => {
+    if (!gameStarted) {
+      return null;
+    }
+
+    if (clicked === "p1") {
+      return <FontAwesomeIcon icon={faCircleNotch} className="icon-circle" />;
+    } else if (clicked === "p2") {
+      return <FontAwesomeIcon icon={faTimes} className="icon-cross" />;
+    }
+  };
+
   return (
     <div className="cell-container">
       <button
@@ -52,7 +66,7 @@ const Cell = (props: CellProps) => {
         className={getButtonStyle()}
         disabled={!isClickable()}
       >
-        Cell
+        {getMark()}
       </button>
     </div>
   );

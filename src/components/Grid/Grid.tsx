@@ -1,9 +1,10 @@
 import React from "react";
 import Cell from "../Cell/Cell";
 import "./Grid.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { gameEnd } from "../../actions/actions";
 import { Game } from "../../constants/constants";
+import { AppState, GameState } from "../../common/Interfaces";
 
 const Grid = () => {
   /**
@@ -16,9 +17,11 @@ const Grid = () => {
 
   const dispatch = useDispatch();
 
+  // const game: GameState = useSelector((state: AppState) => state.game);
+  // const { gameStarted } = game;
+
   const updateMatrix = (pos: number, value: string) => {
     matrix[pos] = value;
-    console.log("Current matrix -> ", matrix);
     checkMatrixStatus();
   };
 
@@ -57,17 +60,16 @@ const Grid = () => {
   };
 
   const checkMatrixStatus = () => {
+    // if (!gameStarted) {
+    //   return;
+    // }
     if (hasPlayerWon("p1")) {
       //dispatch p1 win
       dispatch(gameEnd(Game.WIN, "p1"));
-    }
-
-    if (hasPlayerWon("p2")) {
+    } else if (hasPlayerWon("p2")) {
       //dispatch p2 win
       dispatch(gameEnd(Game.WIN, "p2"));
-    }
-
-    if (isMatchDrawn()) {
+    } else if (isMatchDrawn()) {
       //dispatch match draw
       dispatch(gameEnd(Game.DRAW, "none"));
     }
