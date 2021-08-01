@@ -1,13 +1,12 @@
 import React from "react";
 import CenterScreen from "../CenterScreen/CenterScreen";
+import LeftScreen from "../LeftScreen/LeftScreen";
 import "./MainScreen.css";
 
 const MainScreen = () => {
   return (
     <div className="main-container">
-      <div>
-        <h1>Panel-left</h1>
-      </div>
+      <LeftScreen />
       <CenterScreen />
       <div>
         <h1>Panel-right</h1>

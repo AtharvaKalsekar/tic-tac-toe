@@ -12,13 +12,13 @@ const initialState: AppState = {
   game: {
     currentTurn: "p1",
     gameStarted: false,
+    gameNumber: 0,
   },
 };
 
 const middleware = [thunk];
 const store = createStore(
   reducer,
-  initialState,
   composeWithDevTools(applyMiddleware(...middleware))
 );
 

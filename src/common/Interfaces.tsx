@@ -1,6 +1,7 @@
 export interface GameState {
   currentTurn: "p1" | "p2";
   gameStarted: Boolean;
+  gameNumber: number;
 }
 
 export interface AppState {
