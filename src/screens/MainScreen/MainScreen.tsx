@@ -1,6 +1,7 @@
 import React from "react";
 import CenterScreen from "../CenterScreen/CenterScreen";
 import LeftScreen from "../LeftScreen/LeftScreen";
+import RightScreen from "../RightScreen/RightScreen";
 import "./MainScreen.css";
 
 const MainScreen = () => {
@@ -8,9 +9,7 @@ const MainScreen = () => {
     <div className="main-container">
       <LeftScreen />
       <CenterScreen />
-      <div>
-        <h1>Panel-right</h1>
-      </div>
+      <RightScreen />
     </div>
   );
 };

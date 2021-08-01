@@ -1,5 +1,5 @@
 import { Game } from "../constants/constants";
-import { GameState } from "../common/Interfaces";
+import { GameResult, GameState } from "../common/Interfaces";
 
 interface Action {
   type: any;
@@ -11,6 +11,7 @@ export const gameReducer = (
     currentTurn: "p1",
     gameStarted: false,
     gameNumber: 0,
+    gameRecords: [],
   },
   action: Action
 ): GameState => {
@@ -18,16 +19,31 @@ export const gameReducer = (
   switch (action.type) {
     case Game.START:
       return {
+        ...state,
         currentTurn: "p1",
         gameStarted: true,
         gameNumber: currentNumber + 1,
       };
+
     case Game.RESET:
       return {
+        ...state,
         currentTurn: "p1",
         gameStarted: false,
         gameNumber: currentNumber - 1,
       };
+
+    case Game.DRAW:
+    case Game.WIN:
+      let currentGameRecords = state.gameRecords;
+      currentGameRecords.push(action.payload.gameResult);
+      return {
+        currentTurn: "p1",
+        gameStarted: false,
+        gameNumber: currentNumber,
+        gameRecords: currentGameRecords,
+      };
+
     case Game.CHANGE_TURN:
       let current = state.currentTurn;
       let nextTurn: "p1" | "p2" = current === "p1" ? "p2" : "p1";

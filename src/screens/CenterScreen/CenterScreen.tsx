@@ -7,7 +7,7 @@ import DisplayPanel from "../../components/DisplayPanel/DisplayPanel";
 const CenterScreen = () => {
   return (
     <div className="center-screen-container">
-      <h1>Panel-center</h1>
+      <h1 className="screen-header">TIC-TAC-TOE</h1>
       <DisplayPanel />
       <Grid />
       <ActionPanel />

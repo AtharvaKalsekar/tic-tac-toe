@@ -1,5 +1,12 @@
 .main-container {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  height: 100%;
+}
+
+.screen-header {
+  background-color: rgba(255, 205, 112, 1);
+  text-align: center;
+  margin: 0px;
+  padding: 5px;
+  border-bottom: 1px black solid;
 }

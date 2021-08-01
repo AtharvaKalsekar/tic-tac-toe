@@ -1,7 +1,14 @@
+export interface GameResult {
+  status: string;
+  matchNumber: number;
+  player: string;
+}
+
 export interface GameState {
   currentTurn: "p1" | "p2";
   gameStarted: Boolean;
   gameNumber: number;
+  gameRecords: Array<GameResult>;
 }
 
 export interface AppState {

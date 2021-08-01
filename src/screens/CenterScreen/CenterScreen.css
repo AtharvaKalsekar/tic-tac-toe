@@ -1,6 +1,11 @@
 .center-screen-container {
   display: grid;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   row-gap: 3px;
+  background-color: rgba(255, 226, 173, 0.8);
+  border-radius: 5px;
+  border: 2px solid black;
+  padding: 3px;
+  margin: 3px;
 }

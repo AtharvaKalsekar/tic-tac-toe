@@ -8,14 +8,6 @@ const reducer = combineReducers({
   game: gameReducer,
 });
 
-const initialState: AppState = {
-  game: {
-    currentTurn: "p1",
-    gameStarted: false,
-    gameNumber: 0,
-  },
-};
-
 const middleware = [thunk];
 const store = createStore(
   reducer,

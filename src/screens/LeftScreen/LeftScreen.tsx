@@ -1,13 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { AppState, GameState } from "../../common/Interfaces";
-
+import "./LeftScreen.css";
 const LeftScreen = () => {
   const game: GameState = useSelector((state: AppState) => state.game);
   const { gameNumber } = game;
 
   return (
-    <div>
+    <div className="left-panel-container">
+      <h1 className="screen-header">Status</h1>
       <div>
         <h1>Game</h1>
         <h1>#{gameNumber}</h1>

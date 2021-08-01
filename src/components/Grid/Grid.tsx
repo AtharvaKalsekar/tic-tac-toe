@@ -1,6 +1,9 @@
 import React from "react";
 import Cell from "../Cell/Cell";
 import "./Grid.css";
+import { useDispatch } from "react-redux";
+import { gameEnd } from "../../actions/actions";
+import { Game } from "../../constants/constants";
 
 const Grid = () => {
   /**
@@ -10,6 +13,8 @@ const Grid = () => {
    */
   var matrix = new Array(9);
   matrix.fill("");
+
+  const dispatch = useDispatch();
 
   const updateMatrix = (pos: number, value: string) => {
     matrix[pos] = value;
@@ -54,14 +59,17 @@ const Grid = () => {
   const checkMatrixStatus = () => {
     if (hasPlayerWon("p1")) {
       //dispatch p1 win
+      dispatch(gameEnd(Game.WIN, "p1"));
     }
 
     if (hasPlayerWon("p2")) {
       //dispatch p2 win
+      dispatch(gameEnd(Game.WIN, "p2"));
     }
 
     if (isMatchDrawn()) {
       //dispatch match draw
+      dispatch(gameEnd(Game.DRAW, "none"));
     }
   };
 

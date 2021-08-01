@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { AppState } from "../../common/Interfaces";
+import "./DisplayPanel.css";
 
 const DisplayPanel = () => {
   const game = useSelector((state: AppState) => state.game);
@@ -14,8 +15,18 @@ const DisplayPanel = () => {
     }
   };
 
+  const getStyle = () => {
+    let classes = "display-panel-continer ";
+    if (gameStarted && currentTurn === "p1") {
+      classes += "display-panel-p1";
+    } else if (gameStarted && currentTurn === "p2") {
+      classes += "display-panel-p2";
+    }
+    return classes;
+  };
+
   return (
-    <div>
+    <div className={getStyle()}>
       <h3>{getMessage()}</h3>
     </div>
   );
