@@ -15,6 +15,10 @@ export const gameReducer = (
       return { ...state, currentTurn: "p1", gameStarted: true };
     case Game.RESET:
       return { currentTurn: "p1", gameStarted: false };
+    case Game.CHANGE_TURN:
+      let current = state.currentTurn;
+      let nextTurn: "p1" | "p2" = current === "p1" ? "p2" : "p1";
+      return { ...state, currentTurn: nextTurn };
   }
   return { ...state };
 };

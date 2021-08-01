@@ -6,3 +6,7 @@ export interface GameState {
 export interface AppState {
   game: GameState;
 }
+
+export interface CellProps {
+  num: number;
+}

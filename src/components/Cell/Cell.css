@@ -3,3 +3,18 @@
   height: 100px;
   display: block;
 }
+
+.p1-select {
+  background-color: green;
+}
+
+.p2-select {
+  background-color: red;
+}
+
+.selectable {
+}
+
+.selectable:hover {
+  border: 2px solid blue;
+}

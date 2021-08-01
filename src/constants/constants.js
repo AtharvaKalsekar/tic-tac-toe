@@ -6,4 +6,5 @@ export const Player = {
 export const Game = {
   START: "start",
   RESET: "reset",
+  CHANGE_TURN: "change_turn",
 };
